@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Files: $(ls -p | grep -v '/$' | wc -l)"
+echo "Directories: $(ls -p | grep '/$' | wc -l)"
