@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax1 {
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');
+}
+
+.parallax2 {
+    background-image: url('https://images.dmc.tv/wallpaper/raw/13781.jpg');
+}
+
+section .center-text {
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    font-size: 3vw;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.black-block {
+    background-color: #000;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    section .center-text {
+        font-size: 5vw;
+    }
+    .black-block {
+        font-size: 3vw;
+    }
+}
