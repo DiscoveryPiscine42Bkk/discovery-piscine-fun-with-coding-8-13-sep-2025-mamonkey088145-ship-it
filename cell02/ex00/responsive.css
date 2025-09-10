@@ -1,0 +1,42 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+
+.box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.box-left {
+    background-color: rgb(211, 65, 89);
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.box-right {
+    background-color: rgb(57, 181, 197);
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+
+.box span {
+    color: white;
+    font-size: 5vw;
+    font-weight: bold;
+    line-height: 1;
+}
