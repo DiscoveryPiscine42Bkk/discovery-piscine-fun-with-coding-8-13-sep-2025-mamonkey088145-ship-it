@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        #container {
+            width: 300px;
+        }
+
+        #newBtn {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #e6001a;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        #newBtn:hover {
+            background-color: #b30015;
+        }
+
+        #ft_list {
+            border: 1px solid #ccc;
+            min-height: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .todo {
+            background-color: #ffd1d1;
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            word-wrap: break-word;
+        }
+
+        .todo:hover {
+            background-color: #ff9999;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="newBtn">New</button>
+        <div id="ft_list"></div>
+    </div>
+
+    <script src="todo.js"></script>
+</body>
+</html>
