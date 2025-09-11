@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>It’s over 9000</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #e6001a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #b30015;
+        }
+    </style>
+</head>
+<body>
+    <h2>It’s over 9000 Calculator</h2>
+    <input type="text" id="left" placeholder="Left operand">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="right" placeholder="Right operand">
+    <button id="calculateBtn">Try me!</button>
+
+    <script>
+        const leftInput = document.getElementById('left');
+        const rightInput = document.getElementById('right');
+        const operatorSelect = document.getElementById('operator');
+        const btn = document.getElementById('calculateBtn');
+
+        btn.addEventListener('click', () => {
+            const left = leftInput.value.trim();
+            const right = rightInput.value.trim();
+            const op = operatorSelect.value;
+
+            if (!/^\d+$/.test(left) || !/^\d+$/.test(right)) {
+                alert("Error :(");
+                return;
+            }
+
+            const leftNum = parseInt(left);
+            const rightNum = parseInt(right);
+
+            if ((op === "/" || op === "%") && rightNum === 0) {
+                alert("It's over 9000!");
+                console.log("It's over 9000!");
+                return;
+            }
+
+            let result;
+            switch(op) {
+                case "+": result = leftNum + rightNum; break;
+                case "-": result = leftNum - rightNum; break;
+                case "*": result = leftNum * rightNum; break;
+                case "/": result = leftNum / rightNum; break;
+                case "%": result = leftNum % rightNum; break;
+            }
+
+            alert("Result: " + result);
+            console.log("Result:", result);
+        });
+
+        setInterval(() => {
+            alert("Please, use me...");
+        }, 30000);
+    </script>
+</body>
+</html>
