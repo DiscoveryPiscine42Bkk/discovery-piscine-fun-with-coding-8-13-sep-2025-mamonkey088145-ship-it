@@ -8,32 +8,25 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; margin:0; }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #fdfdfd;
-    }
-
+    /* ✅ Parallax background */
     section {
-      padding-top: 150px;
-      padding-bottom: 150px;
+      min-height: 100vh;
+      padding: 150px 0;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #fff;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
     }
 
-    .nav-link.active {
-      font-weight: 600;
-      color: #ffc107 !important;
-    }
-
-    .smooth-card {
-      transition: all 0.3s ease;
-    }
-    .smooth-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-    }
+    #about { background-image: url("https://picsum.photos/id/1011/1600/900"); }
+    #experience { background-image: url("https://picsum.photos/id/1015/1600/900"); }
+    #skills { background-image: url("https://picsum.photos/id/1021/1600/900"); }
+    #contact { background-image: url("https://picsum.photos/id/1005/1600/900"); }
 
     .profile-img {
       width: 180px;
@@ -43,13 +36,33 @@
       border: 5px solid #fff;
       box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
+
+    .overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 40px;
+      border-radius: 15px;
+      display: inline-block;
+    }
+
+    .nav-link.active {
+      font-weight: 600;
+      color: #ffc107 !important;
+    }
   </style>
 </head>
 <body>
 
+<!-- ✅ Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">🏠 Home</a>
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="navbar-brand fw-bold" href="index.html">🏠 Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand fw-bold" href="cv2.html">📗 CV2</a>
+      </li>
+    </ul>
     <div>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
@@ -61,83 +74,51 @@
   </div>
 </nav>
 
-<section id="about" class="text-center bg-light">
-  <div class="container py-5">
-    <img src="https://scontent.fbkk24-1.fna.fbcdn.net/v/t1.15752-9/520461693_1448481049678058_5079578024828368758_n.webp?stp=dst-webp_s480x480&_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=LXSwpMDQvkAQ7kNvwFxmn2X&_nc_oc=AdmMmasmtP7cvJLCD-VNNTfGbp1-7DhMAQeNCMnWk3NNZIgs_cEHx2fIvKCrf3FFsaLSJCSaiojrhtMqE3QYPK0u&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fbkk24-1.fna&oh=03_Q7cD3QGBpRHLsYbhowAXiO9E5QBl7srKqw9CRLiGBtW1O20A9Q&oe=68EA241B"
-         alt="Profile Photo" class="profile-img mb-3">
+<!-- ✅ About -->
+<section id="about" class="text-center">
+  <div class="overlay">
+    <img src="https://scontent.fbkk24-1.fna.fbcdn.net/v/t1.15752-9/520461693_1448481049678058_5079578024828368758_n.webp?_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OhPxbm0ssb8Q7kNvwFL0uED&_nc_oc=AdlrfQIrjEYh_D2gAW_OktnoIWxeJoHywkdGw4sr593tFVQ-wmB0fgjxERXrLGzUH103zVuesZv7mYEyVF3TvTyl&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fbkk24-1.fna&oh=03_Q7cD3QG77LPUgN2GR6Ugj2H6oGpAoFMwTVFcLdJZqtaACosVHQ&oe=68EBADDB" alt="Profile Photo" class="profile-img mb-3">
     <h2 class="fw-bold mb-3">Apiwat Hatrawang</h2>
-    <p class="text-muted fs-5 mb-4">Chemistry student</p>
-    <p class="text-secondary fs-6" style="line-height:1.8;">
-      I like chemistry and seeking new knowledge. I also like science and computers.
+    <p class="fs-5">Chemistry student who loves science and computers</p>
+    <p style="line-height:1.8;">
     </p>
   </div>
 </section>
 
-<section id="experience" class="container py-5">
-  <h3 class="fw-bold text-center mb-5 text-primary">Experience</h3>
-  <div class="row g-5">
-    <div class="col-md-6">
-      <div class="card h-100 shadow border-0 smooth-card">
-        <div class="card-body">
-          <h5 class="card-title text-primary mb-3">Editing video clips for a factory</h5>
-          <ul style="line-height:1.8;">
-            <li>Product promotion clip</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100 shadow border-0 smooth-card">
-        <div class="card-body">
-          <h5 class="card-title text-primary mb-3">7-11 Employee</h5>
-          <ul style="line-height:1.8;">
-            <li>Cashier</li>
-            <li>Learned to work as a team</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+<!-- ✅ Experience -->
+<section id="experience" class="text-center">
+  <div class="overlay">
+    <h3 class="fw-bold text-warning mb-4">Experience</h3>
+    <p>📹 Edited promotional videos for a factory</p>
+    <p>🛒 Worked as cashier at 7-11, learned teamwork</p>
+    <p>💻 Explored AI tools to improve productivity</p>
   </div>
 </section>
 
-<section id="skills" class="bg-light py-5">
-  <div class="container">
-    <h3 class="fw-bold text-center mb-5 text-success">🛠️ Skills</h3>
-    <div class="row text-center g-4">
-      <div class="col-md-3 mb-3">
-        <div class="card shadow-sm border-0 bg-primary text-white h-100 smooth-card">
-          <div class="card-body"><h5>Editing</h5><p></div>
-        </div>
-      </div>
-      <div class="col-md-3 mb-3">
-        <div class="card shadow-sm border-0 bg-info text-dark h-100 smooth-card">
-          <div class="card-body"><h5>Financial management skills</h5><p></div>
-        </div>
-      </div>
-      <div class="col-md-3 mb-3">
-        <div class="card shadow-sm border-0 bg-warning text-dark h-100 smooth-card">
-          <div class="card-body"><h5>Use AI</h5><p></div>
-        </div>
-      </div>
-      <div class="col-md-3 mb-3">
-        <div class="card shadow-sm border-0 bg-success text-white h-100 smooth-card">
-          <div class="card-body"><h5>Drawing</h5><p></div>
-        </div>
-      </div>
-    </div>
+<!-- ✅ Skills -->
+<section id="skills" class="text-center">
+  <div class="overlay">
+    <h3 class="fw-bold text-success mb-4">🛠️ Skills</h3>
+    <p>🎬 Video Editing</p>
+    <p>💰 Financial Management</p>
+    <p>🤖 AI Usage</p>
+    <p>🎨 Drawing</p>
+    <p>📝 Communication</p>
   </div>
 </section>
 
-<section id="contact" class="py-5 text-center">
-  <div class="container">
-    <h3 class="fw-bold mb-4 text-danger">📞 Contact</h3>
-    <p>Email: <a href="67051340@kmitl.ac.th">67051340@kmitl.ac.th</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/1st.apiwat/" target="_blank">https://www.instagram.com/1st.apiwat/</a></p>
+<!-- ✅ Contact -->
+<section id="contact" class="text-center">
+  <div class="overlay">
+    <h3 class="fw-bold text-danger mb-4">📞 Contact</h3>
+    <p>Email: <a href="mailto:67051340@kmitl.ac.th" class="text-warning">67051340@kmitl.ac.th</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/1st.apiwat/" target="_blank" class="text-warning">1st.apiwat</a></p>
   </div>
 </section>
 
 <script>
   const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll("section");
 
   navLinks.forEach(link => {
     link.addEventListener("click", function(e) {
@@ -150,7 +131,6 @@
     });
   });
 
-  const sections = document.querySelectorAll("section");
   window.addEventListener("scroll", () => {
     let current = "";
     sections.forEach(section => {
